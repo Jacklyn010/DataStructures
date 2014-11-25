@@ -1,5 +1,5 @@
 /**
- * TODO - your comments here
+ * Based off of UCSD CSE 12, Assignment 2.
  */
 
 import java.util.*;
