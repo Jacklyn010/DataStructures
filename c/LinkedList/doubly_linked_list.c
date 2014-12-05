@@ -1,8 +1,8 @@
 /**
- * Singly linked list
+ * Doubly linked list
  */
 
-#include "singly_linked_list.h"
+#include "doubly_linked_list.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,6 +24,7 @@ void linked_list_add(LinkedList *list, int val) {
 		}
 		
 		cur->next = toAdd;
+		toAdd->prev = cur;
 	}
 	
 	list->elems++;
@@ -56,6 +57,8 @@ int linked_list_remove(LinkedList *list, int index) {
 	
 	if (cur->next->next) {
 		cur->next = cur->next->next;
+		
+		cur->next->prev = cur;
 	} else {
 		cur->next = NULL;
 	}
