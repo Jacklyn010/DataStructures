@@ -11,6 +11,7 @@ int main(void) {
 	binary_tree_add(start, RIGHT, 2);
 	binary_tree_add(start->right, LEFT, 3);
 	
+	/* Expected output: 1 0 3 2 */
 	printf("%d\n", start->left->val);
 	printf("%d\n", start->left->parent->val);
 	printf("%d\n", start->right->left->val);
