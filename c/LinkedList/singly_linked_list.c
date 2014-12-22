@@ -55,12 +55,12 @@ int linked_list_remove(LinkedList *list, int index) {
 		cur = cur->next;
 	}
 	
-	if (!cur->next) {
-		fprintf(stderr, "LinkedList index out of bounds: %d\n", index);
-		return -1;
-	}
-	
 	if (index > 0) {
+		if (!cur->next) {
+			fprintf(stderr, "LinkedList index out of bounds: %d\n", index);
+			return -1;
+		}
+		
 		toRemove = cur->next;
 		removed = toRemove->val;
 	
