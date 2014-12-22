@@ -14,6 +14,8 @@ int main(void) {
 	linked_list_add(list, 955);
 	linked_list_add(list, 1337);
 	
+	printf("Tail: %d\n", list->tail->val);
+	
 	for (cur = list->head; cur != NULL; cur = cur->next) {
 		printf("%d\n", cur->val);
 	}
@@ -24,6 +26,8 @@ int main(void) {
 	for (cur = list->head; cur != NULL; cur = cur->next) {
 		printf("%d\n", cur->val);
 	}
+	
+	printf("Tail: %d\n", list->tail->val);
 	
 	free(list);
 	
