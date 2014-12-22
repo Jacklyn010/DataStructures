@@ -71,6 +71,8 @@ int linked_list_remove(LinkedList *list, int index) {
 		list->tail = cur;
 	}
 	
+	list->elems--;
+	
 	return removed;
 }
 
