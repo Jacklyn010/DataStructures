@@ -22,6 +22,7 @@ int main(void) {
 	
 	printf("Get Index 2: %d\n", linked_list_get(list, 2));
 	printf("Remove Index 4: %d\n", linked_list_remove(list, 4));
+	printf("Remove Index 0: %d\n", linked_list_remove(list, 0));
 	
 	for (cur = list->head; cur != NULL; cur = cur->next) {
 		printf("%d\n", cur->val);

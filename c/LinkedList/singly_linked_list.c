@@ -40,7 +40,7 @@ void linked_list_add(LinkedList *list, int val) {
 }
 
 int linked_list_remove(LinkedList *list, int index) {
-	Node *cur;
+	Node *cur, *toRemove;
 	int removed;
 	int i;
 	
@@ -60,15 +60,25 @@ int linked_list_remove(LinkedList *list, int index) {
 		return -1;
 	}
 	
-	removed = cur->next->val;
+	if (index > 0) {
+		toRemove = cur->next;
+		removed = toRemove->val;
 	
-	free(cur->next);
-	
-	if (cur->next->next) {
-		cur->next = cur->next->next;
+		if (toRemove->next) {
+			cur->next = toRemove->next;
+		} else {
+			cur->next = NULL;
+			list->tail = cur;
+		}
+		
+		free(toRemove);
 	} else {
-		cur->next = NULL;
-		list->tail = cur;
+		toRemove = cur;
+		removed = toRemove->val;
+		
+		list->head = toRemove->next;
+		
+		free(toRemove);
 	}
 	
 	list->elems--;
