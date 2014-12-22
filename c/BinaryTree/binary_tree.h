@@ -21,7 +21,10 @@ struct Node {
 	int val;
 };
 
+typedef enum {PREORDER, INORDER, POSTORDER} Order;
+
 void binary_tree_add(Node *parent, int dir, int val);
 Node *binary_tree_new_node(Node *parent, int val);
 void binary_tree_delete_all(Node *root);
 boolean binary_tree_is_search_tree(Node *node, int min, int max);
+void binary_tree_depth_traversal(Node *node, Order ord);

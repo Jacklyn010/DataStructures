@@ -5,6 +5,7 @@
 void binary_tree_test_normal(void);
 void binary_tree_test_search_tree_1(void);
 void binary_tree_test_search_tree_2(void);
+void binary_tree_test_depth_traversal(void);
 
 void binary_tree_test_normal(void) {
 	Node *start;
@@ -63,8 +64,30 @@ void binary_tree_test_search_tree_2(void) {
 	binary_tree_delete_all(start);
 }
 
+void binary_tree_test_depth_traversal(void) {
+	Node *start;
+	
+	start = binary_tree_new_node(NULL, 6);
+	
+	binary_tree_add(start, LEFT, 4);
+	binary_tree_add(start->left, LEFT, 2);
+	binary_tree_add(start->left, RIGHT, 5);
+	binary_tree_add(start->left->left, LEFT, 1);
+	binary_tree_add(start->left->left, RIGHT, 3);
+	
+	binary_tree_add(start, RIGHT, 10);
+	binary_tree_add(start->right, RIGHT, 11);
+	binary_tree_add(start->right, LEFT, 7);
+	binary_tree_add(start->right->left, RIGHT, 9);
+	binary_tree_add(start->right->left->right, LEFT, 8);
+	
+	binary_tree_depth_traversal(start, POSTORDER);
+	
+	binary_tree_delete_all(start);
+}
+
 int main(void) {
-	binary_tree_test_search_tree_1();
+	binary_tree_test_depth_traversal();
 	
 	return 0;
 }

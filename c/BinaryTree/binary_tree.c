@@ -52,3 +52,15 @@ boolean binary_tree_is_search_tree(Node *node, int min, int max) {
 	return binary_tree_is_search_tree(node->left, min, node->val) && 
 		binary_tree_is_search_tree(node->right, node->val, max);
 }
+
+void binary_tree_depth_traversal(Node *node, Order ord) {
+	if (!node) return;
+	
+	if (ord == PREORDER) printf("%d\n", node->val);
+	binary_tree_depth_traversal(node->left, ord);
+	if (ord == INORDER) printf("%d\n", node->val);
+	binary_tree_depth_traversal(node->right, ord);
+	if (ord == POSTORDER) printf("%d\n", node->val);
+}
+
+
