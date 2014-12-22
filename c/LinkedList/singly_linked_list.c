@@ -6,13 +6,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+Node *node_new(int val) {
+	Node *newNode;
+	
+	newNode = (Node *) malloc(sizeof(Node));
+	
+	newNode->val = val;
+	
+	return newNode;
+}
+
 void linked_list_add(LinkedList *list, int val) {
 	Node *cur;
 	Node *toAdd;
 	
-	toAdd = (Node*) calloc(1, sizeof(Node));
-
-	toAdd->val = val;
+	toAdd = node_new(val);
 	
 	if (!list->head) {
 		list->head = toAdd;
