@@ -3,10 +3,20 @@
 #include <stdlib.h>
 
 void queue_enqueue(Queue *queue, int val) {
+	if (!queue) {
+		fprintf(stderr, "java.lang.NullPointerException\n");
+		return;
+	}
+	
 	linked_list_add(queue, val);
 }
 
 int queue_dequeue(Queue *queue) {
+	if (!queue) {
+		fprintf(stderr, "java.lang.NullPointerException\n");
+		return;
+	}
+	
 	if (!queue->head) {
 		fprintf(stderr, "Queue is empty\n");
 		return -1;
@@ -16,6 +26,11 @@ int queue_dequeue(Queue *queue) {
 }
 
 int queue_peek(Queue *queue) {
+	if (!queue) {
+		fprintf(stderr, "java.lang.NullPointerException\n");
+		return;
+	}
+	
 	if (!queue->head) {
 		fprintf(stderr, "Queue is empty\n");
 		return -1;
