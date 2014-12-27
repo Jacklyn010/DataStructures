@@ -35,6 +35,8 @@ void linked_list_add(LinkedList *list, int val) {
 		toAdd->prev = cur;
 	}
 	
+	list->tail = toAdd;
+	
 	list->elems++;
 }
 
@@ -69,6 +71,7 @@ int linked_list_remove(LinkedList *list, int index) {
 		cur->next->prev = cur;
 	} else {
 		cur->next = NULL;
+		list->tail = cur;
 	}
 	
 	return removed;
