@@ -1,7 +1,7 @@
 DataStructures
 ==============
 
-Practice with data structures, in different languages for each data structure. 
+My implementation for each common data structure known, using different languages.
 
 Languages
 =========
