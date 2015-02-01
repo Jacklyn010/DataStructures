@@ -4,7 +4,7 @@
 
 void queue_enqueue(Queue *queue, int val) {
 	if (!queue) {
-		fprintf(stderr, "java.lang.NullPointerException\n");
+		fprintf(stderr, "Queue is null\n");
 		return;
 	}
 	
@@ -13,7 +13,7 @@ void queue_enqueue(Queue *queue, int val) {
 
 int queue_dequeue(Queue *queue) {
 	if (!queue) {
-		fprintf(stderr, "java.lang.NullPointerException\n");
+		fprintf(stderr, "Queue is null\n");
 		return;
 	}
 	
@@ -27,7 +27,7 @@ int queue_dequeue(Queue *queue) {
 
 int queue_peek(Queue *queue) {
 	if (!queue) {
-		fprintf(stderr, "java.lang.NullPointerException\n");
+		fprintf(stderr, "Queue is null\n");
 		return;
 	}
 	
