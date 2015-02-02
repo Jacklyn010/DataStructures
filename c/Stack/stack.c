@@ -15,6 +15,11 @@ int stack_pop(Stack *stack) {
 	Node *popped;
 	int val;
 	
+	if (!stack) {
+		fprintf(stderr, "Stack is null\n");
+		return -1;
+	}
+	
 	popped = stack->head;
 	stack->head = popped->next;
 	val = popped->val;
