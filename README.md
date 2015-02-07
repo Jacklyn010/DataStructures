@@ -8,4 +8,3 @@ Languages
 
 - Java
 - C
-- C++
