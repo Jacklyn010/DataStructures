@@ -20,6 +20,11 @@ int stack_pop(Stack *stack) {
 		return -1;
 	}
 	
+	if (!stack->head) {
+		fprintf(stderr, "Stack is empty\n");
+		return -1;
+	}
+	
 	popped = stack->head;
 	stack->head = popped->next;
 	val = popped->val;
@@ -30,6 +35,11 @@ int stack_pop(Stack *stack) {
 }
 
 int stack_peek(Stack *stack) {
+	if (!stack) {
+		fprintf(stderr, "Stack is null\n");
+		return -1;
+	}
+	
 	if (!stack->head) {
 		fprintf(stderr, "Stack is empty\n");
 		return -1;
