@@ -6,5 +6,6 @@ My implementation for each common data structure known, using different language
 Languages
 =========
 
-- Java
 - C
+- C++
+- Java
