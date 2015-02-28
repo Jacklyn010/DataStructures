@@ -23,19 +23,6 @@ void LinkedList::destroyList(Node *node) {
 
 void LinkedList::add(const ListType &val) {
 	add(length, val);
-	/*Node *node = newNode(val);
-	
-	if (head == NULL) {
-		head = node;
-	}
-	
-	if (tail != NULL) {
-		tail->next = node;
-	}
-	
-	tail = node;
-	
-	length++;*/
 }
 
 void LinkedList::add(int index, const ListType &val) {
@@ -82,7 +69,7 @@ void LinkedList::add(int index, const ListType &val) {
 ListType LinkedList::get(int index) {
 	if (index >= length) {
 		cerr << "LinkedList::get: Array index out of bounds." << endl;
-		return 0;
+		return (ListType) NULL;
 	}
 	
 	Node *node = head;
@@ -95,7 +82,7 @@ ListType LinkedList::get(int index) {
 }
 
 ListType LinkedList::remove(int index) {
-	return 0;
+	return (ListType) NULL;
 }
 
 Node* LinkedList::newNode(const ListType &val) {
