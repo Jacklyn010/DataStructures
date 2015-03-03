@@ -31,7 +31,7 @@ public:
 	
 	int size() { return length; }
 
-//private:
+private:
 	void destroyList(Node *node);
 
 	Node *newNode(const ListType &val);
