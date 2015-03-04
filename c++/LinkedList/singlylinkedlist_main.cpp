@@ -11,6 +11,8 @@ int main(void) {
 	list.add(955);
 	list.add(1337);
 	
+	list.remove(4);
+	
 	list.add(2, 50);
 	list.add(1, 12);
 	

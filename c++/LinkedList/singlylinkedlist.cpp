@@ -82,7 +82,43 @@ ListType LinkedList::get(int index) {
 }
 
 ListType LinkedList::remove(int index) {
-	return (ListType) NULL;
+    Node *removed;
+    ListType value;
+    
+    if (index < 0 || index > length - 1) {
+		cerr << "LinkedList::remove: Array index out of bounds." << endl;
+		return (ListType) NULL;
+	}
+    
+    // If the head is what we want to delete, then do so accordingly.
+    if (index == 0) {
+		removed = head;
+		
+		head = head->next;
+	} else {
+		// If not, then we'll need to traverse through the list.
+		Node *curNode = head;
+		
+		for (int i = 0; i < index - 1; i++) {
+			curNode = curNode->next;
+		}
+		
+		if (curNode->next == tail) {
+			// Tail deletion
+			tail = curNode;
+		}
+		
+		removed = curNode->next;
+	
+		curNode->next = removed->next;
+	}
+	
+	// Delete the node and decrement the number of items.
+	value = removed->val;
+	delete[] removed;
+	
+	length--;
+	return value;
 }
 
 Node* LinkedList::newNode(const ListType &val) {
