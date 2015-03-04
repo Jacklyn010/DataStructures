@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void Stack::push(ListType val) {
+void Stack::push(const ListType &val) {
 	Node *newNode = new Node(val);
 	
 	newNode->next = head;

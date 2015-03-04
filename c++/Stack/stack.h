@@ -7,7 +7,7 @@ class Stack {
 public:
 	Stack():head(NULL), length(0) {}
 	
-	void push(ListType val);
+	void push(const ListType &val);
 	ListType pop();
 	ListType peek();
 	
