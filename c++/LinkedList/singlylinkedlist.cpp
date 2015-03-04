@@ -82,16 +82,16 @@ ListType LinkedList::get(int index) {
 }
 
 ListType LinkedList::remove(int index) {
-    Node *removed;
-    ListType value;
-    
-    if (index < 0 || index > length - 1) {
+	Node *removed;
+	ListType value;
+	
+	if (index < 0 || index > length - 1) {
 		cerr << "LinkedList::remove: Array index out of bounds." << endl;
 		return (ListType) NULL;
 	}
-    
-    // If the head is what we want to delete, then do so accordingly.
-    if (index == 0) {
+	
+	// If the head is what we want to delete, then do so accordingly.
+	if (index == 0) {
 		removed = head;
 		
 		head = head->next;
