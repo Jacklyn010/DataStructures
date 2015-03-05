@@ -123,6 +123,7 @@ ListType LinkedList::remove(int index) {
 
 Node* LinkedList::newNode(const ListType &val) {
 	Node *node = new Node(val);
+	node->next = NULL;
 	
 	return node;
 }
