@@ -13,12 +13,13 @@ LinkedList::~LinkedList() {
 }
 
 void LinkedList::destroyList(Node *node) {
-	if (node->next == NULL) {
-		delete[] node;
+	if (node == NULL) {
 		return;
 	}
 	
 	destroyList(node->next);
+	
+	delete node;
 }
 
 void LinkedList::add(const ListType &val) {
