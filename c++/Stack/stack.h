@@ -3,19 +3,24 @@
 #ifndef STACK_H
 #define STACK_H
 
+static const int TOP_LOCATION = 0;
+
 class Stack {
 public:
-	Stack():head(NULL), length(0) {}
+	Stack() {}
+	Stack(const Stack &other):list(other.list) {}
+	~Stack() {}
 	
 	void push(const ListType &val);
 	ListType pop();
-	ListType peek();
+	ListType peek() const;
 	
-	bool hasNext() { return length > 0; }
-
+	int size() const { return list.size(); }
+	bool hasNext() const { return list.size() > 0; }
+	bool isEmpty() const { return list.size() == 0; }
+	bool isFull() const { return false; }
 private:
-	Node *head;
-	int length;
+	LinkedList list;
 };
 
 #endif

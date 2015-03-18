@@ -3,40 +3,25 @@
 using namespace std;
 
 void Stack::push(const ListType &val) {
-	Node *newNode = new Node(val);
-	
-	newNode->next = head;
-	head = newNode;
-	
-	length++;
+	list.add(TOP_LOCATION, val);
 }
 
 ListType Stack::pop() {
-	Node *node = head;
-	
-	if (node == NULL) {
+	if (isEmpty()) {
 		// Stack is empty.
 		cerr << "Stack::pop: Stack is empty." << endl;
 		return (ListType) NULL;
 	}
 	
-	int val = node->val;
-	
-	head = node->next;
-	
-	delete[] node;
-	
-	length--;
-	
-	return val;
+	return list.remove(TOP_LOCATION);
 }
 
-ListType Stack::peek() {
-	if (head == NULL) {
+ListType Stack::peek() const {
+	if (isEmpty()) {
 		// Stack is empty.
 		cerr << "Stack::peek: Stack is empty." << endl;
 		return (ListType) NULL;
 	}
 	
-	return head->val;
+	return list.get(TOP_LOCATION);
 }
