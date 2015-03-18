@@ -2,6 +2,8 @@
 
 using namespace std;
 
+void printList(const LinkedList &list);
+
 int main(void) {
 	LinkedList list;
 	
@@ -16,14 +18,20 @@ int main(void) {
 	list.add(2, 50);
 	list.add(1, 12);
 	
-	for (int i = 0; i < list.size(); i++) {
-		cout << list.get(i) << endl;
-	}
+	printList(list);
 	
 	cout << "Get Index 2: " << list.get(2) << endl;
 	
-	//printf("Remove Index 4: %d\n", linked_list_remove(list, 4));
-	//printf("Remove Index 0: %d\n", linked_list_remove(list, 0));
+	cout << "Remove Index 4: " << list.remove(4) << endl;
+	cout << "Remove Index 0: " << list.remove(0) << endl;
+	
+	printList(list);
 	
 	return 0;
+}
+
+void printList(const LinkedList &list) {
+	for (int i = 0; i < list.size(); i++) {
+		cout << list.get(i) << endl;
+	}
 }

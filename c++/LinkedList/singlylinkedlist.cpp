@@ -13,12 +13,13 @@ LinkedList::~LinkedList() {
 }
 
 void LinkedList::destroyList(Node *node) {
-	if (node->next == NULL) {
-		delete[] node;
+	if (node == NULL) {
 		return;
 	}
 	
 	destroyList(node->next);
+	
+	delete node;
 }
 
 void LinkedList::add(const ListType &val) {
@@ -123,6 +124,7 @@ ListType LinkedList::remove(int index) {
 
 Node* LinkedList::newNode(const ListType &val) {
 	Node *node = new Node(val);
+	node->next = NULL;
 	
 	return node;
 }
