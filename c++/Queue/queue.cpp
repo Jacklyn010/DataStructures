@@ -13,7 +13,7 @@ ListType Queue::dequeue() {
 		return (ListType) NULL;
 	}
 	
-	return list.remove(0);
+	return list.remove(TOP_LOCATION);
 }
 
 ListType Queue::peek() const {
@@ -22,5 +22,5 @@ ListType Queue::peek() const {
 		return (ListType) NULL;
 	}
 	
-	return list.get(0);
+	return list.get(TOP_LOCATION);
 }

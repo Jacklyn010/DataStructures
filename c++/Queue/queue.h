@@ -1,5 +1,10 @@
 #include "LinkedList/singlylinkedlist.h"
 
+#ifndef QUEUE_H
+#define QUEUE_H
+
+static const int TOP_LOCATION = 0;
+
 class Queue {
 public:
 	Queue() {}
@@ -17,3 +22,5 @@ public:
 private:
 	LinkedList list;
 };
+
+#endif
