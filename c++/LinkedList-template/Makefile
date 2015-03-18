@@ -5,10 +5,10 @@ CFLAGS	= -g -Wall -ansi -pedantic
 
 all: singly
 
-singly: singlylinkedlist.o singlylinkedlist_main.o
-	$(CC) $(CFLAGS) singlylinkedlist.o singlylinkedlist_main.o -o singlylinkedlist_main
+singly: singlylinkedlist.h singlylinkedlist_main.o
+	$(CC) $(CFLAGS) singlylinkedlist.h singlylinkedlist_main.o -o singlylinkedlist_main
 
-singlylinkedlist_main.o: singlylinkedlist.o singlylinkedlist_main.cpp
+singlylinkedlist_main.o: singlylinkedlist_main.cpp
 	$(CC) $(CFLAGS) -c singlylinkedlist_main.cpp
 
 singlylinkedlist.o: singlylinkedlist.h

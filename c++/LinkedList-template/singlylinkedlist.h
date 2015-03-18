@@ -13,23 +13,24 @@ struct Node {
 template <typename T>
 class LinkedList {
 public:
-	LinkedList() {}
+	LinkedList():head(NULL), tail(NULL), length(0) {}
 	//LinkedList(const LinkedList &other);
 	//~LinkedList();
-	void add(T val);
+	void add(const T &val);
 	
 	T remove(int ind);
 	
 	T get(int ind);
 	
-	int size() { return length; }
+	int size() const { return length; }
 
 private:
-	Node<T> *newNode(T val);
-
-	int length;
+	Node<T> *newNode(const T &val);
+	
 	Node<T> *head;
 	Node<T> *tail;
+
+	int length;
 };
 
 #include "singlylinkedlist.cpp"

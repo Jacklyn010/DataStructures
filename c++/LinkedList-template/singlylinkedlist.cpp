@@ -3,14 +3,12 @@
 using namespace std;
 
 template <typename T>
-void LinkedList<T>::add(T val) {
+void LinkedList<T>::add(const T &val) {
 	Node<T> *node = newNode(val);
 	
 	if (!head) {
 		head = node;
-	}
-	
-	if (tail) {
+	} else {
 		tail->next = node;
 	}
 	
@@ -28,7 +26,7 @@ T LinkedList<T>::get(int index) {
 	
 	Node<T> *node = head;
 	
-	for (int i = 0; i <= index; i++) {
+	for (int i = 0; i < index; i++) {
 		node = node->next;
 	}
 	
@@ -41,10 +39,11 @@ T LinkedList<T>::remove(int index) {
 }
 
 template <typename T>
-Node<T>* LinkedList<T>::newNode(T val) {
+Node<T>* LinkedList<T>::newNode(const T &val) {
 	Node<T> *node = new Node<T>;
 	
 	node->val = val;
+	node->next = NULL;
 	
 	return node;
 }

@@ -5,6 +5,7 @@ using namespace std;
 
 int main(void) {
 	LinkedList<int> list;
+	LinkedList<const char*> stringList;
 	
 	list.add(5);
 	list.add(10);
@@ -17,8 +18,10 @@ int main(void) {
 	}
 	
 	cout << "Get Index 2: " << list.get(2) << endl;
-	//printf("Remove Index 4: %d\n", linked_list_remove(list, 4));
-	//printf("Remove Index 0: %d\n", linked_list_remove(list, 0));
+	
+	stringList.add("hello");
+	
+	cout << stringList.get(0) << endl;
 	
 	return 0;
 }
