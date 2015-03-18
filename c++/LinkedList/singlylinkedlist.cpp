@@ -66,7 +66,7 @@ void LinkedList::add(int index, const ListType &val) {
 	length++;
 }
 
-ListType LinkedList::get(int index) {
+ListType LinkedList::get(int index) const {
 	if (index >= length) {
 		cerr << "LinkedList::get: Array index out of bounds." << endl;
 		return (ListType) NULL;

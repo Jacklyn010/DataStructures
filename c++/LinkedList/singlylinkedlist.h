@@ -26,9 +26,9 @@ public:
 	
 	ListType remove(int ind);
 	
-	ListType get(int ind);
+	ListType get(int ind) const;
 	
-	int size() { return length; }
+	int size() const { return length; }
 
 private:
 	void destroyList(Node *node);
