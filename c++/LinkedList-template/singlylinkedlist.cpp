@@ -35,7 +35,7 @@ T LinkedList<T>::get(int index) {
 
 template <typename T>
 T LinkedList<T>::remove(int index) {
-	return 0;
+	return (T) NULL;
 }
 
 template <typename T>
