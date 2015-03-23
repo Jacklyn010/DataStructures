@@ -53,7 +53,6 @@ T LinkedList<T>::get(int index) {
 
 template <typename T>
 T LinkedList<T>::remove(int index) {
-<<<<<<< HEAD
 	if (index < 0 || index >= length) {
 		throw LinkedListException(ARRAY_INDEX_OUT_OF_BOUNDS);
 	}
