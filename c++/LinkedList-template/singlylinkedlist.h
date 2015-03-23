@@ -4,6 +4,18 @@
 #ifndef SINGLYLINKEDLIST_H
 #define SINGLYLINKEDLIST_H
 
+enum LinkedListError {
+	ARRAY_INDEX_OUT_OF_BOUNDS
+};
+
+class LinkedListException {
+public:
+	LinkedListException(LinkedListError e):err(e) {}
+	LinkedListError getException() { return err; }
+private:
+	LinkedListError err;
+};
+
 template <typename T>
 struct Node {
 	Node<T> *next;
@@ -15,7 +27,7 @@ class LinkedList {
 public:
 	LinkedList():head(NULL), tail(NULL), length(0) {}
 	//LinkedList(const LinkedList &other);
-	//~LinkedList();
+	~LinkedList();
 	void add(const T &val);
 	
 	T remove(int ind);
@@ -26,6 +38,7 @@ public:
 
 private:
 	Node<T> *newNode(const T &val);
+	Node<T> *getNode(int ind);
 	
 	Node<T> *head;
 	Node<T> *tail;
