@@ -19,6 +19,8 @@ int main(void) {
 	
 	cout << "Get Index 2: " << list.get(2) << endl;
 	
+	cout << "Remove Index 3: " << list.remove(3) << endl;
+
 	stringList.add("hello");
 	
 	cout << stringList.get(0) << endl;
