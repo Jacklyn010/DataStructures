@@ -58,7 +58,7 @@ T LinkedList<T>::remove(int index) {
 	Node<T> *prev = getNode(index - 1);
 	Node<T> *remove = prev->next;
 	
-	T val = prev->val;
+	T val = remove->val;
 	
 	prev->next = remove->next;
 	
