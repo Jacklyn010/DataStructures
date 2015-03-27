@@ -1,7 +1,7 @@
 DataStructures
 ==============
 
-My implementation for each common data structure known, using different languages.
+My implementation for common data structures, using different languages.
 
 Languages
 =========
