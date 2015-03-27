@@ -11,9 +11,6 @@ singly: singlylinkedlist.h singlylinkedlist_main.o
 singlylinkedlist_main.o: singlylinkedlist_main.cpp
 	$(CC) $(CFLAGS) -c singlylinkedlist_main.cpp
 
-singlylinkedlist.o: singlylinkedlist.h
-	$(CC) $(CFLAGS) -c singlylinkedlist.h
-
 test: singly
 	./singlylinkedlist_main
 

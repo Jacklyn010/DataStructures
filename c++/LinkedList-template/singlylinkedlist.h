@@ -26,19 +26,18 @@ template <typename T>
 class LinkedList {
 public:
 	LinkedList():head(NULL), tail(NULL), length(0) {}
-	//LinkedList(const LinkedList &other);
+	LinkedList(const LinkedList &other);
 	~LinkedList();
+
 	void add(const T &val);
-	
 	T remove(int ind);
-	
-	T get(int ind);
+	T get(int ind) const;
 	
 	int size() const { return length; }
 
 private:
 	Node<T> *newNode(const T &val);
-	Node<T> *getNode(int ind);
+	Node<T> *getNode(int ind) const;
 	
 	Node<T> *head;
 	Node<T> *tail;

@@ -1,6 +1,11 @@
-#include "singlylinkedlist.h"
-
 using namespace std;
+
+template <typename T>
+LinkedList<T>::LinkedList(const LinkedList &other):head(NULL), tail(NULL), length(0) {
+	for (int i = 0; i < other.size(); i++) {
+		add(other.get(i));
+	}
+}
 
 template <typename T>
 LinkedList<T>::~LinkedList() {
@@ -32,7 +37,7 @@ void LinkedList<T>::add(const T &val) {
 }
 
 template <typename T>
-Node<T> *LinkedList<T>::getNode(int index) {
+Node<T> *LinkedList<T>::getNode(int index) const {
 	Node<T> *node = head;
 	
 	for (int i = 0; i < index; i++) {
@@ -43,7 +48,7 @@ Node<T> *LinkedList<T>::getNode(int index) {
 } 
 
 template <typename T>
-T LinkedList<T>::get(int index) {
+T LinkedList<T>::get(int index) const {
 	if (index < 0 || index >= length) {
 		throw LinkedListException(ARRAY_INDEX_OUT_OF_BOUNDS);
 	}
@@ -65,6 +70,8 @@ T LinkedList<T>::remove(int index) {
 	prev->next = remove->next;
 	
 	delete remove;
+	
+	length--;
 	
 	return val;
 }
