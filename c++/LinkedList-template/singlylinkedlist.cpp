@@ -38,6 +38,10 @@ void LinkedList<T>::add(const T &val) {
 
 template <typename T>
 Node<T> *LinkedList<T>::getNode(int index) const {
+	if (index < 0 || index >= length) {
+		return NULL;
+	}
+	
 	Node<T> *node = head;
 	
 	for (int i = 0; i < index; i++) {
