@@ -32,6 +32,9 @@ Node *binary_tree_new_node(Node *parent, int val) {
 	newNode->parent = parent;
 	newNode->val = val;
 	
+	newNode->left = NULL;
+	newNode->right = NULL;
+	
 	return newNode;
 }
 
