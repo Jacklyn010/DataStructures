@@ -6,11 +6,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+LinkedList *linked_list_new(void) {
+	return (LinkedList *) calloc(1, sizeof(LinkedList));
+}
+
+void linked_list_destroy(LinkedList *list) {
+	Node *cur = list->head;
+	Node *next = NULL;
+	
+	while (cur != NULL) {
+		next = cur->next;
+		free(cur);
+		cur = next;
+	}
+	
+	free(list);
+}
+
 Node *node_new(int val) {
 	Node *newNode;
 	
 	newNode = (Node *) malloc(sizeof(Node));
 	
+	newNode->prev = NULL;
+	newNode->next = NULL;
 	newNode->val = val;
 	
 	return newNode;
@@ -41,8 +60,8 @@ void linked_list_add(LinkedList *list, int val) {
 }
 
 int linked_list_remove(LinkedList *list, size_t index) {
-	Node *cur;
-	int removed;
+	Node *cur, *removedNode;
+	int removedVal;
 	size_t i;
 	
 	cur = list->head;
@@ -61,9 +80,8 @@ int linked_list_remove(LinkedList *list, size_t index) {
 		return -1;
 	}
 	
-	removed = cur->next->val;
-	
-	free(cur->next);
+	removedNode = cur->next;
+	removedVal = cur->next->val;
 	
 	if (cur->next->next) {
 		cur->next = cur->next->next;
@@ -74,7 +92,9 @@ int linked_list_remove(LinkedList *list, size_t index) {
 		list->tail = cur;
 	}
 	
-	return removed;
+	free(removedNode);
+	
+	return removedVal;
 }
 
 int linked_list_get(LinkedList *list, size_t index) {

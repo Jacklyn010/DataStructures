@@ -6,7 +6,7 @@ int main(void) {
 	LinkedList *list;
 	Node *cur;
 	
-	list = (LinkedList*) calloc(1, sizeof(LinkedList));
+	list = linked_list_new();
 	
 	linked_list_add(list, 1);
 	linked_list_add(list, 2);
@@ -37,7 +37,7 @@ int main(void) {
 		printf("\n");
 	}
 	
-	free(list);
+	linked_list_destroy(list);
 	
 	return 0;
 }

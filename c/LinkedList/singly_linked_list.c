@@ -6,11 +6,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+LinkedList *linked_list_new(void) {
+	return (LinkedList *) calloc(1, sizeof(LinkedList));
+}
+
+void linked_list_destroy(LinkedList *list) {
+	Node *cur = list->head;
+	Node *next = NULL;
+	
+	while (cur != NULL) {
+		next = cur->next;
+		free(cur);
+		cur = next;
+	}
+	
+	free(list);
+}
+
 Node *node_new(int val) {
 	Node *newNode;
 	
 	newNode = (Node *) malloc(sizeof(Node));
 	
+	newNode->next = NULL;
 	newNode->val = val;
 	
 	return newNode;
