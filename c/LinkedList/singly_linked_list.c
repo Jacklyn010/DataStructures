@@ -39,16 +39,16 @@ void linked_list_add(LinkedList *list, int val) {
 	list->elems++;
 }
 
-int linked_list_remove(LinkedList *list, int index) {
+int linked_list_remove(LinkedList *list, size_t index) {
 	Node *cur, *toRemove;
 	int removed;
-	int i;
+	size_t i;
 	
 	cur = list->head;
 	
 	for (i = 0; i < index - 1; i++) {
 		if (!cur) {
-			fprintf(stderr, "LinkedList index out of bounds: %d\n", index);
+			fprintf(stderr, "LinkedList index out of bounds: %lu\n", index);
 			return -1;
 		}
 		
@@ -57,7 +57,7 @@ int linked_list_remove(LinkedList *list, int index) {
 	
 	if (index > 0) {
 		if (!cur->next) {
-			fprintf(stderr, "LinkedList index out of bounds: %d\n", index);
+			fprintf(stderr, "LinkedList index out of bounds: %lu\n", index);
 			return -1;
 		}
 		
@@ -86,15 +86,15 @@ int linked_list_remove(LinkedList *list, int index) {
 	return removed;
 }
 
-int linked_list_get(LinkedList *list, int index) {
+int linked_list_get(LinkedList *list, size_t index) {
 	Node *cur;
-	int i;
+	size_t i;
 	
 	cur = list->head;
 	
 	for (i = 0; i < index; i++) {
 		if (!cur) {
-			fprintf(stderr, "LinkedList index out of bounds: %d", index);
+			fprintf(stderr, "LinkedList index out of bounds: %lu", index);
 			return -1;
 		}
 		

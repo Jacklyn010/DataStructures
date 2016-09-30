@@ -1,7 +1,5 @@
-# Based off of my Makefiles in the CaltechCS11 repo.
-
 CC		= gcc
-CFLAGS	= -g -Wall -Wstrict-prototypes -ansi -pedantic
+CFLAGS	= -g -Wall -Werror -Wstrict-prototypes -ansi -pedantic
 
 all: singly doubly
 

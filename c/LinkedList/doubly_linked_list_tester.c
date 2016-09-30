@@ -8,11 +8,11 @@ int main(void) {
 	
 	list = (LinkedList*) calloc(1, sizeof(LinkedList));
 	
+	linked_list_add(list, 1);
+	linked_list_add(list, 2);
+	linked_list_add(list, 3);
+	linked_list_add(list, 4);
 	linked_list_add(list, 5);
-	linked_list_add(list, 10);
-	linked_list_add(list, 25);
-	linked_list_add(list, 955);
-	linked_list_add(list, 1337);
 	
 	for (cur = list->head; cur != NULL; cur = cur->next) {
 		printf("%d", cur->val);
